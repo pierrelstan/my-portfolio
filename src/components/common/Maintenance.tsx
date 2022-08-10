@@ -9,8 +9,7 @@ export default function Maintenance({ image }: maintenanceProps) {
       maxWidth="lg"
       sx={{
         backgroundColor: 'background.default'
-      }}
-    >
+      }}>
       <Box
         sx={{
           display: 'flex',
@@ -18,20 +17,17 @@ export default function Maintenance({ image }: maintenanceProps) {
           flexDirection: 'column',
           alignItems: 'center',
           height: '100vh'
-        }}
-      >
+        }}>
         <Box
           sx={{
             textAlign: 'center'
-          }}
-        >
+          }}>
           <Typography
             variant="h2"
             sx={{
               fontWeight: '800',
               color: 'primary.main'
-            }}
-          >
+            }}>
             Website currently under maintenance
           </Typography>
           <Typography
@@ -39,8 +35,7 @@ export default function Maintenance({ image }: maintenanceProps) {
             sx={{
               color: 'primary.light'
             }}
-            data-cy="sub-title"
-          >
+            data-cy="sub-title">
             We are currently working hard on this page!
           </Typography>
         </Box>
