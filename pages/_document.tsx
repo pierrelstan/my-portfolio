@@ -61,7 +61,7 @@ MyDocument.getInitialProps = async (ctx) => {
     originalRenderPage({
       // eslint-disable-next-line react/display-name
       enhanceApp: (App: any) => (props) =>
-        <App emotionCache={cache} {...props} />,
+        <App emotionCache={cache} {...props} />
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -82,7 +82,7 @@ MyDocument.getInitialProps = async (ctx) => {
     // Styles fragment is rendered after the app and page rendering finish.
     styles: [
       ...React.Children.toArray(initialProps.styles),
-      ...emotionStyleTags,
-    ],
+      ...emotionStyleTags
+    ]
   };
 };
