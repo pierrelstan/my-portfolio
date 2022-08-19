@@ -10,10 +10,10 @@ const Item = styled(Box)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-export default function SectionIntro() {
+export default function SectionHero() {
   return (
     <LayoutVh>
-      <Grid xs={8}>
+      <Grid xs={8} id="home">
         <Item>
           <Typography variant="h3" gutterBottom>
             Hi I&apos;m Stanley | Full Stack Developer
