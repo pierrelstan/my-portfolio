@@ -1,14 +1,13 @@
 import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 import React from 'react';
-import image from '../public/static/maintenance.png';
 import Layout from '../src/components/common/Layout';
-import Maintenance from '../src/components/common/Maintenance';
+import SectionHero from '../src/components/SectionHero';
 
 const Home: NextPage = () => (
-  <Container maxWidth="lg">
+  <Container maxWidth="lg" sx={{}}>
     <Layout>
-      <Maintenance image={image as any} />
+      <SectionHero />
     </Layout>
   </Container>
 );

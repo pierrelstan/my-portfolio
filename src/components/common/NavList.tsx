@@ -22,7 +22,7 @@ export default function NavList() {
             key={item}
             variant="button"
             color="primary.main"
-            href={`${item === 'Home' ? '/' : item.toLowerCase()}`}>
+            href={`#${item === 'Home' ? '/' : item.toLowerCase()}`}>
             <Button sx={{ color: '#000000' }}>{item}</Button>
           </StyledLink>
         ))}
