@@ -23,7 +23,16 @@ export default function NavList() {
             variant="button"
             color="primary.main"
             href={`#${item === 'Home' ? '/' : item.toLowerCase()}`}>
-            <Button sx={{ color: '#000000' }}>{item}</Button>
+            <Button
+              sx={{
+                color: 'text.secondary',
+                '&:hover': {
+                  boxShadow: 2,
+                  color: 'text.primary'
+                }
+              }}>
+              {item}
+            </Button>
           </StyledLink>
         ))}
       </Box>
