@@ -10,7 +10,8 @@ export default function LayoutVh({ children }: Props) {
       sx={{
         flexGrow: 1,
         height: '100vh',
-        alignItems: 'center'
+        alignItems: 'center',
+        margin: 0
       }}>
       {children}
     </Grid>
