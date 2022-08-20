@@ -4,9 +4,9 @@ import Stack from '@mui/material/Stack';
 
 export default function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear();
-  const Year = currentYear === 2022 ? '2022' : '2022 - ' + currentYear;
+  const Year = currentYear;
   return (
-    <Stack direction="row" spacing={1}>
+    <Stack spacing={1}>
       <Container
         sx={{
           mt: '120px',
@@ -17,7 +17,7 @@ export default function Footer(): JSX.Element {
             variant="h6"
             sx={{
               fontSize: '14px',
-              color: 'primary.secondary',
+              color: 'text.secondary',
               p: 1
             }}>
             © Copyright {Year}, Stanley Pierre Louis
