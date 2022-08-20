@@ -13,10 +13,10 @@ const Item = styled(Box)(({ theme }) => ({
 export default function SectionHero() {
   return (
     <LayoutVh>
-      <Grid xs={8} id="home">
+      <Grid xs={12} md={8} id="home">
         <Item>
           <Typography variant="h3" gutterBottom>
-            Hi I&apos;m Stanley | Full Stack Developer
+            Hi I&apos;m Stanley | Full Stack Web Developer
           </Typography>
           <Typography
             variant="subtitle1"
@@ -28,7 +28,7 @@ export default function SectionHero() {
           </Typography>
         </Item>
       </Grid>
-      <Grid xs={4}>
+      <Grid xs={12} sm={4}>
         <Item>
           <Image
             src={LogoDev as any}
