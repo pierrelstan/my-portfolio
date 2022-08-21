@@ -45,14 +45,14 @@ export default function ProjectsSection() {
   return (
     <Box>
       <Typography
-        variant="h3"
+        variant="h4"
         gutterBottom
         sx={{
           color: 'text.secondary',
-          textAlign: 'center'
+          // textAlign: 'center'
         }}
         id="projects">
-        Projects
+        PROJECTS
       </Typography>
       <LayoutProjects>
         {Data.map((data, index) => (
@@ -87,7 +87,7 @@ export default function ProjectsSection() {
                 </Typography>
                 {!data.completed && (
                   <Typography
-                    variant="h6"
+                    variant="subtitle1"
                     sx={{
                       color: 'red',
                       position: 'relative',
