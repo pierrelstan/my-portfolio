@@ -48,7 +48,7 @@ export default function ProjectsSection() {
         variant="h4"
         gutterBottom
         sx={{
-          color: 'text.secondary',
+          color: 'text.secondary'
           // textAlign: 'center'
         }}
         id="projects">
