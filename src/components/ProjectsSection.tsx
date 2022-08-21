@@ -45,10 +45,11 @@ export default function ProjectsSection() {
   return (
     <Box>
       <Typography
-        variant="h4"
+        variant="h5"
         gutterBottom
         sx={{
-          color: 'text.secondary'
+          color: 'text.secondary',
+          pl: 3.4
           // textAlign: 'center'
         }}
         id="projects">
