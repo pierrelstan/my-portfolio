@@ -15,8 +15,13 @@ export default function SectionHero() {
     <LayoutVh>
       <Grid xs={12} md={8} id="home">
         <Item>
-          <Typography variant="h3" gutterBottom>
-            Hi I&apos;m Stanley | Full Stack Web Developer
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{
+              color: 'text.primary'
+            }}>
+            Hi, I&apos;m Stanley!
           </Typography>
           <Typography
             variant="subtitle1"
