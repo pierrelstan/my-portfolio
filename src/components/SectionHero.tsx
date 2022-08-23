@@ -2,7 +2,6 @@ import { Grid, Typography, Box } from '@mui/material';
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
-import LogoDev from '../../public/static/logoDeveloper.svg';
 import LayoutVh from './common/LayoutVh';
 
 const Item = styled(Box)(({ theme }) => ({
@@ -13,7 +12,7 @@ const Item = styled(Box)(({ theme }) => ({
 export default function SectionHero() {
   return (
     <LayoutVh>
-      <Grid xs={12} md={8} id="home">
+      <Grid xs={12} sm={8} id="home">
         <Item>
           <Typography
             variant="h3"
@@ -36,7 +35,7 @@ export default function SectionHero() {
       <Grid xs={12} sm={4}>
         <Item>
           <Image
-            src={LogoDev as any}
+            src={'/webDeveloper.svg'}
             objectFit="contain"
             alt="logo"
             width={350}

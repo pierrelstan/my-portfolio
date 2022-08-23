@@ -5,7 +5,6 @@ import Image from 'next/image';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import LayoutVh from './common/LayoutVh';
-import LogoMail from '../../public/mail.svg';
 import Link from './Link';
 
 export default function ContactSection() {
@@ -13,15 +12,6 @@ export default function ContactSection() {
     <Box id="contact">
       <LayoutVh>
         <Grid xs={12} sm={8}>
-          <Image
-            src={LogoMail as any}
-            objectFit="contain"
-            alt="logo"
-            width={350}
-            height={350}
-          />
-        </Grid>
-        <Grid xs={12} sm={4}>
           <Typography
             variant="h4"
             sx={{
@@ -41,7 +31,7 @@ export default function ContactSection() {
                   sx={{
                     fontSize: 70,
                     m: 2,
-                    color: '#3c3f4e'
+                    color: '#282739'
                   }}
                 />
               </Link>
@@ -52,12 +42,21 @@ export default function ContactSection() {
                   sx={{
                     fontSize: 70,
                     m: 2,
-                    color: '#3c3f4e'
+                    color: '#282739'
                   }}
                 />
               </Link>
             </Box>
           </Box>
+        </Grid>
+        <Grid xs={12} sm={4}>
+          <Image
+            src={'/email.svg'}
+            objectFit="contain"
+            alt="logo"
+            width={350}
+            height={350}
+          />
         </Grid>
       </LayoutVh>
     </Box>
