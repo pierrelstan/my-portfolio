@@ -11,7 +11,7 @@ const StyledLink = styled(Link)(() => ({
   alignItems: 'center'
 }));
 
-const navItems = ['Home', 'Projects', 'Contact'];
+const navItems = ['Home', 'Projects', 'About', 'Contact'];
 
 export default function NavList() {
   return (

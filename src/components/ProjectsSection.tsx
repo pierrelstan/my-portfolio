@@ -50,7 +50,6 @@ export default function ProjectsSection() {
         sx={{
           color: 'text.secondary',
           pl: 3.4
-          // textAlign: 'center'
         }}
         id="projects">
         PROJECTS
