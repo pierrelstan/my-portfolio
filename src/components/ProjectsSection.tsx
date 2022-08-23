@@ -17,7 +17,7 @@ const Data = [
   {
     title: 'E-Commerce',
     image: '/storeLogo.png',
-    description: `A full-stack E-Commerce Web App Build with Reactjs, Redux & Material UI.`,
+    description: `A full-stack E-Commerce Web App Build with the MERN STACK`,
     demo: 'https://pierrelstan.github.io/shopwitapp-frontend/#/shopwitapp-frontend/',
     repo: 'https://github.com/pierrelstan/shopwitapp-frontend',
     completed: true
