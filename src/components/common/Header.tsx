@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       <AppBar
-        position="static"
+        position="fixed"
         elevation={0}
         sx={{
           borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
