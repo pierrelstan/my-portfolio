@@ -40,14 +40,15 @@ export default function Hamburger() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}>
       <List>
-        {['Home', 'Projects', 'About'].map((text) => {
+        {['Home', 'Projects', 'About', 'Contact'].map((text) => {
           return (
             <ListItem button key={text}>
               <Link
                 sx={{
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  color: 'text.primary'
                 }}
-                href={`/${
+                href={`#${
                   text.toLowerCase() === 'home' ? '/' : text.toLowerCase()
                 }`}>
                 <ListItemText primary={text} />

@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 import React from 'react';
+import AboutSection from '../src/components/AboutSection';
 import Layout from '../src/components/common/Layout';
 import ContactSection from '../src/components/ContactSection';
 import ProjectsSection from '../src/components/ProjectsSection';
@@ -11,6 +12,7 @@ const Home: NextPage = () => (
     <Layout>
       <SectionHero />
       <ProjectsSection />
+      <AboutSection />
       <ContactSection />
     </Layout>
   </Container>
