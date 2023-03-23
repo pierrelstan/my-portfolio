@@ -4,13 +4,13 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import LayoutVh from './common/LayoutVh';
+// import LayoutVh from './common/Section';
 import Link from './Link';
 
 export default function ContactSection() {
   return (
     <Box id="contact">
-      <LayoutVh>
+      {/* <LayoutVh> */}
         <Grid xs={12} sm={8}>
           <Typography
             variant="h4"
@@ -58,7 +58,7 @@ export default function ContactSection() {
             height={350}
           />
         </Grid>
-      </LayoutVh>
+      {/* </LayoutVh> */}
     </Box>
   );
 }
