@@ -1,48 +1,58 @@
 import { Grid, Typography, Box } from '@mui/material';
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Image from 'next/image';
-import LayoutVh from './common/LayoutVh';
+
+import Section from './common/Section';
 
 const Item = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(3),
-  color: theme.palette.text.secondary
+  padding: theme.spacing(3)
 }));
 
 export default function SectionHero() {
   return (
-    <LayoutVh>
-      <Grid xs={12} sm={8} id="home">
-        <Item>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{
-              color: 'text.primary'
-            }}>
-            Hi, I&apos;m Stanley!
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{
-              color: 'text.secondary'
-            }}
-            gutterBottom>
-            I build things for the web
-          </Typography>
-        </Item>
+    <Section>
+      <Grid
+        container
+        id="home"
+        spacing={2}
+        sx={{
+          mt: 7
+        }}>
+        <Grid>
+          <Item>
+            <Typography
+              variant="h1"
+              sx={{
+                color: 'text.primary',
+                fontSize: {
+                  lg: 200,
+                  md: 200,
+                  sm: 100,
+                  xs: 70
+                },
+                fontWeight: 800
+              }}>
+              Hey!
+            </Typography>
+            <Typography
+              variant="h2"
+              gutterBottom
+              sx={{
+                mt: 2,
+                color: 'text.primary',
+                fontSize: {
+                  lg: 100,
+                  md: 70,
+                  sm: 60,
+                  xs: 20
+                }
+              }}>
+              My name is <strong>Stanley</strong>. <br /> I build things for the{' '}
+              <strong>Web</strong>, and <strong>Mobile</strong>.
+            </Typography>
+          </Item>
+        </Grid>
       </Grid>
-      <Grid xs={12} sm={4}>
-        <Item>
-          <Image
-            src={'/webDeveloper.svg'}
-            objectFit="contain"
-            alt="logo"
-            width={350}
-            height={350}
-          />
-        </Item>
-      </Grid>
-    </LayoutVh>
+    </Section>
   );
 }
