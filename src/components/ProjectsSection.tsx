@@ -10,7 +10,7 @@ import OpenInNew from '@mui/icons-material/OpenInNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 import LayoutProjects from './common/LayoutProjects';
-import image from '../../public/static/logoDeveloper.svg';
+// import image from '../../public/static/logoDeveloper.svg';
 import Link from './Link';
 
 const Data = [
@@ -33,7 +33,7 @@ const Data = [
   },
   {
     title: 'Bug Tracker',
-    image: `${image}`,
+    // image: `${image}`,
     description: '',
     repo: 'github',
     demo: 'Demo',
