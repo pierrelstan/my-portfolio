@@ -27,7 +27,8 @@ export default function NavList() {
               sx={{
                 color: 'text.primary',
                 fontWeight: 'bold',
-                fontSize: 18
+                fontSize: 18,
+                textTransform: 'none'
               }}>
               {href.name}
             </Button>

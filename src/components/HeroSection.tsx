@@ -20,8 +20,8 @@ export default function SectionHero() {
             sx={{
               color: 'text.primary',
               fontSize: {
-                lg: 180,
-                md: 180,
+                lg: 140,
+                md: 130,
                 sm: 100,
                 xs: 70
               },
@@ -36,8 +36,8 @@ export default function SectionHero() {
               mt: 2,
               color: 'text.primary',
               fontSize: {
-                lg: 70,
-                md: 70,
+                lg: 60,
+                md: 60,
                 sm: 60,
                 xs: 20
               }
