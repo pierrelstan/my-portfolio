@@ -6,7 +6,7 @@ import Header from './Header';
 export default function Layout({ children }: any) {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="lg"
       sx={{
         display: 'flex',
         flexDirection: 'column',
