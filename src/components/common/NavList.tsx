@@ -1,37 +1,35 @@
 import { Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
+
 import Link from '../Link';
+import { navLinks } from '../../lib/Navlinks';
 
 const StyledLink = styled(Link)(() => ({
   textDecoration: 'none',
-  margin: '5px 15px',
+  margin: '10px 60px',
   flexGrow: 1,
   justifyContent: 'center',
   alignItems: 'center'
 }));
 
-const navItems = ['Home', 'Projects', 'About', 'Contact'];
-
 export default function NavList() {
   return (
     <>
       <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-        {navItems.map((item) => (
+        {navLinks.map((href, index) => (
           <StyledLink
-            key={item}
+            key={index}
             variant="button"
             color="primary.main"
-            href={`#${item === 'Home' ? '/' : item.toLowerCase()}`}>
+            href={href.path}>
             <Button
               sx={{
-                color: 'text.secondary',
-                '&:hover': {
-                  boxShadow: 2,
-                  color: 'text.primary'
-                }
+                color: 'text.primary',
+                fontWeight: 'bold',
+                fontSize: 18
               }}>
-              {item}
+              {href.name}
             </Button>
           </StyledLink>
         ))}
