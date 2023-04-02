@@ -1,9 +1,11 @@
+import React from 'react';
 import { AppBar, Toolbar, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import React from 'react';
 import Nav from './Nav';
 import NavList from './NavList';
 import Hamburger from '../Hamburger';
+import Img from '../../../public/Light.svg';
+import Image from 'next/image';
 
 const IsHeaderDisplay = styled('div')(({ theme }) => ({
   display: 'none',
@@ -24,18 +26,17 @@ export default function Header() {
   return (
     <>
       <AppBar
-        position="fixed"
+        position="absolute"
         elevation={0}
         sx={{
-          borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
           backgroundColor: 'background.default',
-          color: 'primary.main'
+          color: 'text.primary'
         }}>
         <IsHeaderDisplay>
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'flex-end'
+              justifyContent: 'center'
             }}>
             <Toolbar>
               <Nav>
