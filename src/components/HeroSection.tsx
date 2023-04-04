@@ -1,8 +1,8 @@
 import { Grid, Typography, Box } from '@mui/material';
 import React from 'react';
-import { styled } from '@mui/material/styles';
 
 import Section from './common/Section';
+import Icons from './common/Icons';
 
 export default function SectionHero() {
   return (
@@ -46,6 +46,7 @@ export default function SectionHero() {
             things for the <strong>Web</strong> and <br />
             <strong>Mobile</strong>.
           </Typography>
+          <Icons />
         </Grid>
       </Grid>
     </Section>
