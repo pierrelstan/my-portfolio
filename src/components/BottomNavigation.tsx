@@ -39,7 +39,7 @@ export default function SBottomNavigation() {
             color: 'text.primary',
             flexDirection: 'row',
             '& .css-17owlhv-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected':
-              { color: 'text.secondary' }
+              { color: '#4A4346' }
           }}>
           <BottomNavigationAction
             label="Home"
