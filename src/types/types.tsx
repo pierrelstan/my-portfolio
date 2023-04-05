@@ -1,10 +1,23 @@
 import { StaticImageData } from 'next/image';
-import { LinkProps as NextLinkProps } from 'next/link';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface maintenanceProps {
   image?: StaticImageData | string;
 }
-export interface Props {
+export interface Children {
   children?: ReactNode;
+  id: string;
+}
+
+interface Card {
+  title: string;
+  image: string;
+  description: string;
+  demo: string;
+  repo: string;
+  completed: boolean;
+}
+
+export interface Cards {
+  [key: string]: Card;
 }

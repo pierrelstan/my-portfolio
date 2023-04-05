@@ -1,12 +1,11 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import { Props } from '../../types/types';
+import { Children } from '../../types/types';
 
-export default function Section({ children }: Props) {
+export default function Section({ children }: Children) {
   return (
     <Grid
       container
-      spacing={2}
       sx={{
         flexGrow: 1,
         height: {

@@ -1,15 +1,16 @@
-import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 import React from 'react';
 import Layout from '../src/components/common/Layout';
 import SectionHero from '../src/components/HeroSection';
+import ProjectsSection from '../src/components/ProjectsSection';
 
 const Home: NextPage = () => (
-  <Container maxWidth="lg">
+  <>
     <Layout>
       <SectionHero />
+      <ProjectsSection />
     </Layout>
-  </Container>
+  </>
 );
 
 export default Home;
