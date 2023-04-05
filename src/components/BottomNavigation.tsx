@@ -38,7 +38,7 @@ export default function SBottomNavigation() {
             justifyContent: 'space-around',
             color: 'text.primary',
             flexDirection: 'row',
-            '& .css-17owlhv-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected':
+            '& .css-17owlhv-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected,.css-1h67wd6.Mui-selected ':
               { color: '#4A4346' }
           }}>
           <BottomNavigationAction
