@@ -7,7 +7,8 @@ export const data = [
     demo: 'https://github.com/pierrelstan/lo-movies',
     repo: 'https://github.com/pierrelstan/lo-movies',
 
-    completed: true
+    completed: true,
+    isMobile: true
   },
   {
     title: 'Echo Store',
@@ -15,7 +16,8 @@ export const data = [
     description: `A Web app for digital gamers , built with the Mern Stack.`,
     demo: 'https://echo-one.vercel.app/',
     repo: 'https://github.com/pierrelstan/echo',
-    completed: true
+    completed: true,
+    isMobile: false
   },
   {
     title: 'Yaya Resto',
@@ -24,7 +26,8 @@ export const data = [
     demo: 'https://yayaresto.vercel.app',
     repo: 'https://github.com/pierrelstan/yayaresto',
 
-    completed: true
+    completed: true,
+    isMobile: false
   },
   {
     title: 'Shopwit',
@@ -32,7 +35,8 @@ export const data = [
     description: `A  Web app for shoppers, built with the Mern Stack.`,
     repo: 'https://pierrelstan.github.io/shopwitapp-frontend/#/shopwitapp-frontend/',
     demo: 'https://github.com/pierrelstan/shopwitapp-frontend',
-    completed: true
+    completed: true,
+    isMobile: false
   },
   {
     title: 'Reddit Timer',
@@ -42,7 +46,8 @@ export const data = [
     demo: 'https://reddit-timer-stanley.netlify.app',
     repo: 'https://github.com/pierrelstan/reddit-timer-pierrelstan',
 
-    completed: true
+    completed: true,
+    isMobile: false
   },
 
   {
@@ -52,6 +57,7 @@ export const data = [
     demo: 'Demo',
     repo: 'github',
 
-    completed: false
+    completed: false,
+    isMobile: false
   }
 ];
