@@ -40,7 +40,7 @@ export default function SectionHero() {
             lg: 60,
             md: 60,
             sm: 60,
-            xs: 20
+            xs: 18
           }
         }}>
         My name is <strong>Stanley Pierre Louis</strong>, <br /> I build things
