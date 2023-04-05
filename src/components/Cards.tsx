@@ -57,17 +57,19 @@ const Cards = (props: Cards) => {
           </Typography>
         )}
       </CardContent>
-      <CardActions
-        sx={{
-          filter: `${props.card.completed ? 'blur(0px)' : 'blur(10px)'} `
-        }}>
+      <CardActions>
         <Link
           href={props.card.demo}
           target="_blank"
           rel="noopener noreferrer"
           sx={{
             textDecoration: 'none',
-            p: 1
+            p: 1,
+            filter: `${
+              props.card.completed && !props.card.isMobile
+                ? 'blur(0px)'
+                : 'blur(10px)'
+            } `
           }}>
           <OpenInNew />
         </Link>
@@ -78,6 +80,7 @@ const Cards = (props: Cards) => {
           sx={{
             textDecoration: 'none',
             p: 1,
+            filter: `${props.card.completed ? 'blur(0px)' : 'blur(10px)'} `,
             color: 'text.secondary',
             '&:hover': {
               color: 'text.secondary'
