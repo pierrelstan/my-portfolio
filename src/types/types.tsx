@@ -16,6 +16,7 @@ interface Card {
   demo: string;
   repo: string;
   completed: boolean;
+  isMobile: boolean;
 }
 
 export interface Cards {
