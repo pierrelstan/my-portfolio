@@ -61,7 +61,7 @@ const Cards = (props: Cards) => {
           filter: `${props.card.completed ? 'blur(0px)' : 'blur(10px)'} `
         }}>
         <Link
-          href={`${props.card.repo}`}
+          href={props.card.demo}
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -71,7 +71,7 @@ const Cards = (props: Cards) => {
           <OpenInNew />
         </Link>
         <Link
-          href={`${props.card.repo}`}
+          href={props.card.repo}
           target="_blank"
           rel="noopener noreferrer"
           sx={{
