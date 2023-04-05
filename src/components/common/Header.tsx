@@ -4,8 +4,6 @@ import { styled } from '@mui/material/styles';
 import Nav from './Nav';
 import NavList from './NavList';
 import Hamburger from '../Hamburger';
-import Img from '../../../public/Light.svg';
-import Image from 'next/image';
 
 const IsHeaderDisplay = styled('div')(({ theme }) => ({
   display: 'none',
@@ -36,7 +34,7 @@ export default function Header() {
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'center'
+              justifyContent: 'flex-end'
             }}>
             <Toolbar>
               <Nav>
