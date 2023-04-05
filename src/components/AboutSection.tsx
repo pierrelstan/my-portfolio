@@ -1,43 +1,44 @@
-import { Box, Grid, Typography } from '@mui/material';
-import Image from 'next/image';
 import React from 'react';
-// import LayoutVh from './common/Section';
+import { Grid, Typography } from '@mui/material';
+import Icons from './common/Icons';
+import Title from './common/Title';
 
 export default function AboutSection() {
   return (
-    <Box id="about">
+    <Grid
+      id="about"
+      sx={{
+        mt: [0, 18],
+        display: 'flex',
+        flexDirection: 'column',
+        height: {
+          lg: 'auto',
+          xs: '100vh'
+        },
+        justifyContent: 'center'
+      }}>
+      <Title title="About" />
       <Typography
-        variant="h5"
+        variant="h2"
         gutterBottom
         sx={{
-          color: 'text.secondary',
-          pl: 3.4,
-          mt: '40px'
-        }}
-        id="projects">
-        ABOUT
+          mt: 2,
+          color: 'text.primary',
+          fontSize: {
+            lg: 40,
+            md: 40,
+            sm: 30,
+            xs: 18
+          }
+        }}>
+        I am a <strong>Full Stack Developer </strong> with expertise in{' '}
+        <strong>web</strong> and <strong>mobile</strong> development . I&lsquo;m
+        dedicated to developing interactive, user-friendly application .
+        I&lsquo;m also proficient in troubleshooting complex issues, and
+        implementing new features. If you are an employer looking to hire, feel
+        free to get in touch.
       </Typography>
-      {/* <LayoutVh> */}
-      <Grid xs={12} sm={6}>
-        <Image
-          src={'/profile.svg'}
-          objectFit="contain"
-          alt="logo"
-          width={350}
-          height={350}
-        />
-      </Grid>
-      <Grid xs={12} sm={6}>
-        <Typography
-          variant="subtitle1"
-          sx={{
-            color: 'text.primary'
-          }}>
-          My name is <strong>Stanley Pierre Louis</strong> , I&apos;m a full
-          stack web developer focusing on the mern Stack.
-        </Typography>
-      </Grid>
-      {/* </LayoutVh> */}
-    </Box>
+      <Icons />
+    </Grid>
   );
 }
