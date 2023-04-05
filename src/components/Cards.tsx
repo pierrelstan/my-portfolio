@@ -9,6 +9,7 @@ import OpenInNew from '@mui/icons-material/OpenInNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from './Link';
 import { Cards } from '../types/types';
+import { CardHeader } from '@mui/material';
 
 const Cards = (props: Cards) => {
   return (
@@ -20,6 +21,7 @@ const Cards = (props: Cards) => {
         borderRadius: '50px'
       }}
       raised={false}>
+      <CardHeader />
       <CardMedia
         sx={{
           filter: `${props.card.completed ? 'blur(0px)' : 'blur(20px)'} `
