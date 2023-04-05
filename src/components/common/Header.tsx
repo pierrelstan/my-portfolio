@@ -3,7 +3,6 @@ import { AppBar, Toolbar, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Nav from './Nav';
 import NavList from './NavList';
-import Hamburger from '../Hamburger';
 
 const IsHeaderDisplay = styled('div')(({ theme }) => ({
   display: 'none',
@@ -43,9 +42,6 @@ export default function Header() {
             </Toolbar>
           </Box>
         </IsHeaderDisplay>
-        <IsDrawerDisplay>
-          <Hamburger />
-        </IsDrawerDisplay>
       </AppBar>
     </>
   );
