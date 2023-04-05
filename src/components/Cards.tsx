@@ -51,8 +51,7 @@ const Cards = (props: Cards) => {
             variant="subtitle1"
             sx={{
               color: 'red',
-              position: 'relative',
-              zIndex: 2
+              position: 'relative'
             }}>
             Coming soon
           </Typography>
