@@ -19,12 +19,16 @@ const icons = [
   }
 ];
 
-const Icons = () => {
+interface IConsProps {
+  align?: string;
+}
+const Icons = (props: IConsProps) => {
   return (
     <Box
       sx={{
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: props.align,
         gap: 5,
         mt: 1
       }}>

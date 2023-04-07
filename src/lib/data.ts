@@ -1,6 +1,6 @@
 export const data = [
   {
-    title: 'Lo Movie',
+    title: 'Movies',
     image: '/loMovie.png',
     description:
       'A mobile app for movie enthusiasts, built with  React-Native, Redux, React-Native-Navigation.',
@@ -20,7 +20,7 @@ export const data = [
     isMobile: false
   },
   {
-    title: 'Yaya Resto',
+    title: 'Resto',
     image: '/yayaresto.png',
     description: `A  Web App for foodies , built  with the Mern Stack.`,
     demo: 'https://yayaresto.vercel.app',
@@ -37,27 +37,27 @@ export const data = [
     demo: 'https://github.com/pierrelstan/shopwitapp-frontend',
     completed: true,
     isMobile: false
-  },
-  {
-    title: 'Reddit Timer',
-    image: '/redditLogo.png',
-    description:
-      'A Web app for professional content creators, built with Reactjs.',
-    demo: 'https://reddit-timer-stanley.netlify.app',
-    repo: 'https://github.com/pierrelstan/reddit-timer-pierrelstan',
-
-    completed: true,
-    isMobile: false
-  },
-
-  {
-    title: 'Bug Tracker',
-    image: '/im.png',
-    description: '',
-    demo: 'Demo',
-    repo: 'github',
-
-    completed: false,
-    isMobile: false
   }
+  // {
+  //   title: 'Reddit Timer',
+  //   image: '/redditLogo.png',
+  //   description:
+  //     'A Web app for professional content creators, built with Reactjs.',
+  //   demo: 'https://reddit-timer-stanley.netlify.app',
+  //   repo: 'https://github.com/pierrelstan/reddit-timer-pierrelstan',
+
+  //   completed: true,
+  //   isMobile: false
+  // }
+
+  // {
+  //   title: 'Bug Tracker',
+  //   image: '/im.png',
+  //   description: '',
+  //   demo: 'Demo',
+  //   repo: 'github',
+
+  //   completed: false,
+  //   isMobile: false
+  // }
 ];

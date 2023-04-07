@@ -6,7 +6,7 @@ export interface maintenanceProps {
 }
 export interface Children {
   children?: ReactNode;
-  id: string;
+  id?: string;
 }
 
 interface Card {

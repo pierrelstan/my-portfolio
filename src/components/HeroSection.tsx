@@ -1,53 +1,50 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react';
 import Icons from './common/Icons';
+import Text from './common/Text';
+import Section from './common/Section';
 
 export default function SectionHero() {
   return (
-    <Grid
-      id="home"
-      sx={{
-        mt: [0, 18],
-        display: 'flex',
-        flexDirection: 'column',
-        height: {
-          lg: 'auto',
-          xs: '100vh'
-        },
-        justifyContent: 'center'
-      }}>
-      <Typography
-        variant="h1"
+    <Section>
+      <Grid
+        id="home"
         sx={{
-          color: 'text.primary',
-          fontSize: {
+          // mt: [0, 18],
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        }}>
+        <Text
+          variant="h1"
+          fontSize={{
             lg: 140,
             md: 130,
             sm: 100,
             xs: 70
-          },
-          fontWeight: 800
-        }}>
-        Hey!
-      </Typography>
-      <Typography
-        variant="h2"
-        gutterBottom
-        sx={{
-          mt: 2,
-          color: 'text.primary',
-          fontSize: {
-            lg: 60,
-            md: 60,
-            sm: 60,
+          }}
+          mb={1}
+          fontWeight={800}
+          textAlign="center">
+          {' '}
+          Hey!
+        </Text>
+
+        <Text
+          variant="h2"
+          fontSize={{
+            lg: 30,
+            md: 25,
+            sm: 18,
             xs: 18
-          }
-        }}>
-        My name is <strong>Stanley Pierre Louis</strong>, <br /> I build things
-        for the <strong>Web</strong> and <br />
-        <strong>Mobile</strong>.
-      </Typography>
-      <Icons />
-    </Grid>
+          }}
+          lineHeight={1.5}
+          textAlign="center">
+          My name is <strong>Stanley Pierre Louis</strong> ,<br /> I build
+          things for the <strong>Web</strong> and <strong>Mobile</strong>
+        </Text>
+        <Icons align="center" />
+      </Grid>
+    </Section>
   );
 }

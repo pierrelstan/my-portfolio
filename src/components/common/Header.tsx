@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppBar, Toolbar, Box } from '@mui/material';
+import { AppBar, Toolbar, Box, CssBaseline, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Nav from './Nav';
-import NavList from './NavList';
+import NavList, { StyledLink } from './NavList';
 
 const IsHeaderDisplay = styled('div')(({ theme }) => ({
   display: 'none',
@@ -11,38 +11,38 @@ const IsHeaderDisplay = styled('div')(({ theme }) => ({
   }
 }));
 
-const IsDrawerDisplay = styled('div')(({ theme }) => ({
-  display: 'block',
-  margin: '10px',
-  [theme.breakpoints.up('md')]: {
-    display: 'none'
-  }
-}));
-
 export default function Header() {
   return (
-    <>
-      <AppBar
-        position="absolute"
-        elevation={0}
-        sx={{
-          backgroundColor: 'background.default',
-          color: 'text.primary'
-        }}>
-        <IsHeaderDisplay>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end'
-            }}>
-            <Toolbar>
-              <Nav>
-                <NavList />
-              </Nav>
-            </Toolbar>
-          </Box>
-        </IsHeaderDisplay>
-      </AppBar>
-    </>
+    <Box>
+      <CssBaseline />
+      <IsHeaderDisplay>
+        <AppBar
+          position="fixed"
+          elevation={0}
+          enableColorOnDark={true}
+          sx={{
+            color: 'text.primary',
+            backgroundColor: '#fff'
+          }}
+          component="nav">
+          <Toolbar>
+            <StyledLink variant="button" color="primary.main" href="/">
+              <Button
+                sx={{
+                  color: 'text.primary',
+                  fontWeight: 'bold',
+                  fontSize: 30,
+                  textTransform: 'none'
+                }}>
+                Stanley.
+              </Button>
+            </StyledLink>
+            <Nav>
+              <NavList />
+            </Nav>
+          </Toolbar>
+        </AppBar>
+      </IsHeaderDisplay>
+    </Box>
   );
 }
