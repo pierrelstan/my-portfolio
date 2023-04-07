@@ -7,12 +7,9 @@ export default function Section({ children }: Children) {
     <Grid
       container
       sx={{
-        flexGrow: 1,
-        height: {
-          lg: '100vh',
-          xs: 'auto'
-        },
-        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '100vh',
         margin: 0
       }}>
       {children}

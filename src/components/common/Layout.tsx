@@ -10,10 +10,9 @@ export default function Layout({ children }: any) {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        height: {
-          lg: '100vh',
-          xs: 'auto'
-        }
+        height: '100vh'
+
+        // backgroundColor: '#282c34'
       }}>
       <Header />
       {children}

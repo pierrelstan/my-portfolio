@@ -5,7 +5,7 @@ import React from 'react';
 import Link from '../Link';
 import { navLinks } from '../../lib/Navlinks';
 
-const StyledLink = styled(Link)(() => ({
+export const StyledLink = styled(Link)(() => ({
   textDecoration: 'none',
   margin: '10px 60px',
   flexGrow: 1,
@@ -15,26 +15,24 @@ const StyledLink = styled(Link)(() => ({
 
 export default function NavList() {
   return (
-    <>
-      <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-        {navLinks.map((href, index) => (
-          <StyledLink
-            key={index}
-            variant="button"
-            color="primary.main"
-            href={href.path}>
-            <Button
-              sx={{
-                color: 'text.primary',
-                fontWeight: 'bold',
-                fontSize: 18,
-                textTransform: 'none'
-              }}>
-              {href.name}
-            </Button>
-          </StyledLink>
-        ))}
-      </Box>
-    </>
+    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+      {navLinks.map((href, index) => (
+        <StyledLink
+          key={index}
+          variant="button"
+          color="primary.main"
+          href={href.path}>
+          <Button
+            sx={{
+              color: 'text.primary',
+              fontWeight: 'bold',
+              fontSize: 18,
+              textTransform: 'none'
+            }}>
+            {href.name}
+          </Button>
+        </StyledLink>
+      ))}
+    </Box>
   );
 }
