@@ -3,10 +3,10 @@
 export const code= [
   {
    id:"5",
-  title: 'Echo Store',
-  image: '/echo.png',
-  shortDescription: 'Echo Store is an e-commerce platform designed for gamers and enthusiasts to discover and purchase games easily.',
-  description: 'Echo Store is a dedicated online marketplace for gamers and gaming enthusiasts to discover, browse, and purchase a wide selection of digital and physical games. With a user-friendly interface, secure checkout, and real-time inventory, Echo Store makes it easy to find the latest releases and classic titles. The platform is optimized for performance and accessibility, ensuring a smooth shopping experience for every gamer.',
+  title: 'Game Vault',
+  image: '/game-vault.png',
+  shortDescription: 'Game Vault is an e-commerce platform designed for gamers and enthusiasts to discover and purchase games easily.',
+  description: 'Game Vault is a dedicated online marketplace for gamers and gaming enthusiasts to discover, browse, and purchase a wide selection of digital and physical games. With a user-friendly interface, secure checkout, and real-time inventory, Game Vault makes it easy to find the latest releases and classic titles. The platform is optimized for performance and accessibility, ensuring a smooth shopping experience for every gamer.',
 
   problemStatement: 'Gamers and enthusiasts need a reliable, user-friendly platform to discover, purchase, and review games online. Existing solutions often lack community features, real-time inventory, or a seamless buying experience.',
 
@@ -36,7 +36,6 @@ export const code= [
     { name: 'Express', reason: 'RESTful API for product, user, and order management', icon: 'express' },
     { name: 'MongoDB', reason: 'Flexible database for products, users, and reviews', icon: 'mongodb' },
     { name: 'Stripe', reason: 'Secure and reliable payment processing', icon: 'stripe' },
-    { name: 'Cloudinary', reason: 'Image hosting for game covers and assets', icon: 'cloudinary' },
     { name: 'Cypress', reason: 'E2E testing for robust and reliable workflows', icon: 'cypress' }
   ],
   
@@ -84,9 +83,9 @@ export const code= [
     { metric: 'User Satisfaction', value: '4.9/5', description: 'Positive feedback on usability and performance' }
   ],
   
-  demo: 'https://dog-tracker-blush.vercel.app/',
-  repo: 'https://github.com/pierrelstan/dog-tracker',
-  caseStudyUrl: '/case-study/dog-tracker',
+  demo: 'https://echo-one.vercel.app/',
+  repo: 'https://github.com/pierrelstan/game-vault',
+  caseStudyUrl: '/case-study/game-vault',
   completed: true,
   isMobile: false,
   isOpenSource: false,
@@ -122,9 +121,8 @@ export const code= [
     solution: 'Built an Expo React Native application with Redux for state management, integrated with the TMDB API for up-to-date movie trailers, and implemented advanced features like offline caching, personalized recommendations, and social sharing.',
 
     techStack: [
-      { name: 'React Native', reason: 'Cross-platform development with native performance', icon: 'react' },
-      { name: 'Redux', reason: 'Predictable state management for complex data flows', icon: 'redux' },
-      { name: 'React Navigation', reason: 'Robust navigation solution for mobile apps', icon: 'navigation' },
+      { name: 'Expo React-Native', reason: 'Cross-platform development with native performance', icon: 'react' },
+      { name: 'Redux Toolkit', reason: 'Predictable state management for complex data flows', icon: 'redux' },
       { name: 'AsyncStorage', reason: 'Local data persistence and offline capabilities', icon: 'storage' },
       { name: 'TMDB API', reason: 'Comprehensive movie database with rich metadata', icon: 'api' }
     ],
@@ -195,9 +193,6 @@ export const code= [
     { name: 'React', reason: 'Dynamic UI with interactive dashboards and live maps', icon: 'react' },
     { name: 'Node.js', reason: 'Scalable backend for real-time event handling', icon: 'node' },
     { name: 'Express', reason: 'RESTful API for data management and alerts', icon: 'express' },
-
-    { name: 'Socket.io', reason: 'Real-time event streaming for location updates and alerts', icon: 'socket' },
-    { name: 'Cloudinary', reason: 'Image hosting for dog profiles and records', icon: 'cloudinary' },
     { name: 'Playwright', reason: 'E2E testing for robust and reliable workflows', icon: 'playwright' }
   ],
   
@@ -242,7 +237,6 @@ export const code= [
   results: [
     { metric: 'Tracking Accuracy', value: '99%', description: 'Real-time location data reliability' },
     { metric: 'Event Responsiveness', value: '70%', description: 'Faster reactions to critical alerts' },
-    { metric: 'User Satisfaction', value: '4.9/5', description: 'Positive feedback on usability and performance' }
   ],
   
   demo: 'https://dog-tracker-blush.vercel.app/',
@@ -283,13 +277,8 @@ export const code= [
   solution: 'Developed a full-stack MERN application with live location tracking, KPI dashboards, analytics, and real-time notifications, ensuring handlers have complete visibility and insights at all times.',
   
   techStack: [
-    { name: 'React', reason: 'Dynamic UI with interactive dashboards and live maps', icon: 'react' },
-    { name: 'Node.js', reason: 'Scalable backend for real-time event handling', icon: 'node' },
-    { name: 'Express', reason: 'RESTful API for data management and alerts', icon: 'express' },
-
-    { name: 'Socket.io', reason: 'Real-time event streaming for location updates and alerts', icon: 'socket' },
-    { name: 'Cloudinary', reason: 'Image hosting for dog profiles and records', icon: 'cloudinary' },
-    { name: 'Playwright', reason: 'E2E testing for robust and reliable workflows', icon: 'playwright' }
+    { name: 'Next.js', reason: 'Dynamic UI with interactive dashboards and live maps', icon: 'react' },
+    { name: 'Styled-Component', reason: 'CSS-in-JS for modular and dynamic styling', icon: 'styled-components' }
   ],
   
   features: [
@@ -343,188 +332,5 @@ export const code= [
   isMobile: false,
   isOpenSource: false,
   category: 'web'
-},
-{
-   id:"4",
-  title: 'Reddit Timer',
-  image: '/redditLogo.png',
-  shortDescription: 'A web app for real-time dog tracking and monitoring.',
-  description: 'Dog Tracker is a full-stack MERN web application for real-time monitoring of dogs. It provides a live map for location tracking, KPI cards for key metrics, activity analytics, alerts and notifications, and a responsive interface. Built with React, Node.js, Express, MongoDB, Socket.io, and Cloudinary, and fully end-to-end tested with Playwright.',
-
-  problemStatement: 'Managing and monitoring multiple dogs in real-time is challenging. Handlers and organizations needed a reliable platform for location tracking, instant alerts, and performance analytics.',
-
-  challenges: [
-    {
-      problem: 'Real-time Tracking',
-      solution: 'Implemented live map with WebSocket-powered updates',
-      impact: 'Enabled instant visibility of all dog locations at once'
-    },
-    {
-      problem: 'Event Awareness',
-      solution: 'Added alerts and notifications for critical dog activities',
-      impact: 'Improved responsiveness to real-time events by 70%'
-    },
-    {
-      problem: 'Data Insights',
-      solution: 'Built analytics dashboards for activity, distance, and speed tracking',
-      impact: 'Provided actionable insights to improve training and care'
-    }
-  ],
-  
-  solution: 'Developed a full-stack MERN application with live location tracking, KPI dashboards, analytics, and real-time notifications, ensuring handlers have complete visibility and insights at all times.',
-  
-  techStack: [
-    { name: 'React', reason: 'Dynamic UI with interactive dashboards and live maps', icon: 'react' },
-    { name: 'Node.js', reason: 'Scalable backend for real-time event handling', icon: 'node' },
-    { name: 'Express', reason: 'RESTful API for data management and alerts', icon: 'express' },
-
-    { name: 'Socket.io', reason: 'Real-time event streaming for location updates and alerts', icon: 'socket' },
-    { name: 'Cloudinary', reason: 'Image hosting for dog profiles and records', icon: 'cloudinary' },
-    { name: 'Playwright', reason: 'E2E testing for robust and reliable workflows', icon: 'playwright' }
-  ],
-  
-  features: [
-    {
-      title: 'Live Map',
-      description: 'Real-time location tracking of all dogs',
-      implementation: 'Socket.io integration for continuous updates on a MapLibre-powered map'
-    },
-    {
-      title: 'KPI Cards',
-      description: 'Key performance indicators at a glance',
-      implementation: 'Dynamic dashboard cards for quick insights'
-    },
-    {
-      title: 'Dog List',
-      description: 'Clickable, status-aware list of all dogs',
-      implementation: 'Filterable, interactive list with activity status'
-    },
-    {
-      title: 'Alerts & Notifications',
-      description: 'Real-time event feed with critical updates',
-      implementation: 'WebSocket-driven alerts for instant awareness'
-    },
-    {
-      title: 'Analytics',
-      description: 'Charts for activity, distance, and speed trends',
-      implementation: 'D3/Recharts visualizations with timeline filtering'
-    },
-    {
-      title: 'Responsive Design',
-      description: 'Mobile-first experience that works everywhere',
-      implementation: 'Fully responsive with TailwindCSS and Material UI'
-    },
-    {
-      title: 'E2E Testing',
-      description: 'Robust reliability through automated testing',
-      implementation: 'Playwright end-to-end test coverage'
-    }
-  ],
-  
-  results: [
-    { metric: 'Tracking Accuracy', value: '99%', description: 'Real-time location data reliability' },
-    { metric: 'Event Responsiveness', value: '70%', description: 'Faster reactions to critical alerts' },
-    { metric: 'User Satisfaction', value: '4.9/5', description: 'Positive feedback on usability and performance' }
-  ],
-  
-  demo: 'https://dog-tracker-blush.vercel.app/',
-  repo: 'https://github.com/pierrelstan/dog-tracker',
-  caseStudyUrl: '/case-study/dog-tracker',
-  completed: true,
-  isMobile: false,
-  isOpenSource: false,
-  category: 'web'
-},
-{
-   id:"3",
-  title: 'Resto',
-  image: '/yayaresto.png',
-  shortDescription: 'A web app for real-time dog tracking and monitoring.',
-  description: 'Dog Tracker is a full-stack MERN web application for real-time monitoring of dogs. It provides a live map for location tracking, KPI cards for key metrics, activity analytics, alerts and notifications, and a responsive interface. Built with React, Node.js, Express, MongoDB, Socket.io, and Cloudinary, and fully end-to-end tested with Playwright.',
-
-  problemStatement: 'Managing and monitoring multiple dogs in real-time is challenging. Handlers and organizations needed a reliable platform for location tracking, instant alerts, and performance analytics.',
-
-  challenges: [
-    {
-      problem: 'Real-time Tracking',
-      solution: 'Implemented live map with WebSocket-powered updates',
-      impact: 'Enabled instant visibility of all dog locations at once'
-    },
-    {
-      problem: 'Event Awareness',
-      solution: 'Added alerts and notifications for critical dog activities',
-      impact: 'Improved responsiveness to real-time events by 70%'
-    },
-    {
-      problem: 'Data Insights',
-      solution: 'Built analytics dashboards for activity, distance, and speed tracking',
-      impact: 'Provided actionable insights to improve training and care'
-    }
-  ],
-  
-  solution: 'Developed a full-stack MERN application with live location tracking, KPI dashboards, analytics, and real-time notifications, ensuring handlers have complete visibility and insights at all times.',
-  
-  techStack: [
-    { name: 'React', reason: 'Dynamic UI with interactive dashboards and live maps', icon: 'react' },
-    { name: 'Node.js', reason: 'Scalable backend for real-time event handling', icon: 'node' },
-    { name: 'Express', reason: 'RESTful API for data management and alerts', icon: 'express' },
-
-    { name: 'Socket.io', reason: 'Real-time event streaming for location updates and alerts', icon: 'socket' },
-    { name: 'Cloudinary', reason: 'Image hosting for dog profiles and records', icon: 'cloudinary' },
-    { name: 'Playwright', reason: 'E2E testing for robust and reliable workflows', icon: 'playwright' }
-  ],
-  
-  features: [
-    {
-      title: 'Live Map',
-      description: 'Real-time location tracking of all dogs',
-      implementation: 'Socket.io integration for continuous updates on a MapLibre-powered map'
-    },
-    {
-      title: 'KPI Cards',
-      description: 'Key performance indicators at a glance',
-      implementation: 'Dynamic dashboard cards for quick insights'
-    },
-    {
-      title: 'Dog List',
-      description: 'Clickable, status-aware list of all dogs',
-      implementation: 'Filterable, interactive list with activity status'
-    },
-    {
-      title: 'Alerts & Notifications',
-      description: 'Real-time event feed with critical updates',
-      implementation: 'WebSocket-driven alerts for instant awareness'
-    },
-    {
-      title: 'Analytics',
-      description: 'Charts for activity, distance, and speed trends',
-      implementation: 'D3/Recharts visualizations with timeline filtering'
-    },
-    {
-      title: 'Responsive Design',
-      description: 'Mobile-first experience that works everywhere',
-      implementation: 'Fully responsive with TailwindCSS and Material UI'
-    },
-    {
-      title: 'E2E Testing',
-      description: 'Robust reliability through automated testing',
-      implementation: 'Playwright end-to-end test coverage'
-    }
-  ],
-  
-  results: [
-    { metric: 'Tracking Accuracy', value: '99%', description: 'Real-time location data reliability' },
-    { metric: 'Event Responsiveness', value: '70%', description: 'Faster reactions to critical alerts' },
-    { metric: 'User Satisfaction', value: '4.9/5', description: 'Positive feedback on usability and performance' }
-  ],
-  
-  demo: 'https://dog-tracker-blush.vercel.app/',
-  repo: 'https://github.com/pierrelstan/dog-tracker',
-  caseStudyUrl: '/case-study/dog-tracker',
-  completed: true,
-  isMobile: false,
-  isOpenSource: false,
-  category: 'web'
-},
-
+}
 ];
