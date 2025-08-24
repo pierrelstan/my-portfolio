@@ -1,18 +1,12 @@
 "use client";
 
-import { code } from "@/data/code";
+import GetInTouch from "@/components/GetInTouch";
 import { timeline } from "@/data/timeline";
-import Image from "next/image";
-import { useState } from "react";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
+import { usePathname } from "next/navigation";
 
 export default function IndexPage() {
+  const pathname = usePathname();
   return (
     <main className="mx-auto max-w-7xl">
       <section className="relative grid min-h-screen items-center gap-8 md:grid-cols-2">
@@ -22,7 +16,7 @@ export default function IndexPage() {
             Stanley Pierre Louis
           </h6>
 
-          <h1 className="font-semibold tracking-tight text-balance break-words leading-[1.15] text-[clamp(2rem,8vw,3.5rem)] sm:text-[clamp(3rem,6vw,6rem)]">
+          <h1 className="text-yellow-400 font-semibold tracking-tight text-balance break-words leading-[1.15] text-[clamp(2rem,8vw,3.5rem)] sm:text-[clamp(3rem,6vw,6rem)]">
             Hello 👋🏾, I turn ideas into apps.
           </h1>
 
@@ -53,7 +47,7 @@ export default function IndexPage() {
       </section>
 
       <section className="mt-16 min-h-screen">
-        <h2 className="font-semibold tracking-tight text-balance break-words text-[clamp(1.75rem,6vw,3rem)]">
+        <h2 className=" text-yellow-400 font-semibold tracking-tight text-balance break-words text-[clamp(1.75rem,6vw,3rem)]">
           Timeline
         </h2>
 
@@ -76,7 +70,7 @@ export default function IndexPage() {
                     {item.type}
                   </span>
                 </div>
-                <div className="text-sm text-gray-400 mt-1 sm:mt-0 break-words">
+                <div className="text-sm text-yellow-200 mt-1 sm:mt-0 break-words">
                   {item.location}
                 </div>
               </div>
@@ -91,18 +85,7 @@ export default function IndexPage() {
           ))}
         </ul>
       </section>
-
-      <section className="min-h-screen w-full justify-center items-center flex">
-        <div className="flex flex-col border border-gray-800 px-16 py-16 w-full text-center gap-10">
-          <h2 className="font-semibold tracking-tight text-balance break-words text-[clamp(1.75rem,6vw,3rem)]">
-            Get in touch
-          </h2>
-          <p className="break-words leading-relaxed text-[clamp(1rem,4.5vw,1.125rem)]">
-            Have a project for me, or just want to say Hi🙋🏾‍♂️? Feel free to email
-            me at stanleypldev@gmail.com.
-          </p>
-        </div>
-      </section>
+      <GetInTouch />
     </main>
   );
 }

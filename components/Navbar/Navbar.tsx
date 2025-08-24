@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -7,43 +8,50 @@ import { cn } from "@/utils";
 import { House } from "lucide-react";
 
 const LINKS = [
-  { title: "Code", url: "/code" },
-  { title: "Design", url: "/design" },
-  { title: "Blog", url: "/blog" },
+  { title: "Code", url: "code" },
+  // { title: "Design", url: "design" },
+  // { title: "Blog", url: "blog" },
 ];
 
 const Navbar = () => {
   const pathname = usePathname();
+  console.log(pathname);
+
   return (
-    <nav className="sticky top-0 h-16  z-[1000] bg-transparent backdrop-blur-sm border-b border-gray-800/50">
-      <div className="flex h-16 max-w-7xl items-center justify-between ">
+    <nav className="sticky top-0 h-16  bg-transparent backdrop-blur-sm border-b border-gray-800/50 z-[1000]">
+      <div className="flex relative  h-16 max-w-7xl items-center justify-between">
         <Link
           href="/"
           title="Home"
           aria-label="Home"
-          className="p-2 hover:bg-gray-800 rounded transition-colors"
+          className={cn(
+            "text-yellow-400 font-regular tracking-wide",
+            pathname === "/" && "text-white"
+          )}
         >
           <House />
         </Link>
-        <section className="flex gap-4">
-          {LINKS.map((link) => (
-            <Link
-              href={link.url}
-              key={link.url}
-              className={cn(
-                "text-sm font-regular tracking-wide px-3 py-2 rounded transition-colors hover:bg-gray-800 cursor-pointer",
-                pathname === link.url && "text-indigo-300 bg-gray-900"
-              )}
-              onClick={() => {
-                console.log("cliked!!");
-              }}
-            >
-              {link.title}
-            </Link>
-          ))}
-        </section>
+
+        <li className="flex gap-4">
+          {LINKS.map(({ title, url }) => {
+            return (
+              <Link
+                key={url}
+                href={url}
+                title={title}
+                aria-label={`Navigate to ${title}`}
+                className={cn(
+                  "text-yellow-400 font-regular tracking-wide",
+                  pathname.includes(url) && "text-white"
+                )}
+              >
+                {title}
+              </Link>
+            );
+          })}
+        </li>
       </div>
-      <div className="relative isolate flex-1 px-32 pt-14 ">
+      <div className="relative flex-1 px-32 pt-14 ">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

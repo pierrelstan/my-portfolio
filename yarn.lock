@@ -648,7 +648,7 @@ nanoid@^3.3.11, nanoid@^3.3.6:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
 
-next@15.5.0:
+next@^15.5.0:
   version "15.5.0"
   resolved "https://registry.yarnpkg.com/next/-/next-15.5.0.tgz#f113bbb4338cbe38ab079a7af75488e6771cc6ff"
   integrity sha512-N1lp9Hatw3a9XLt0307lGB4uTKsXDhyOKQo7uYMzX4i0nF/c27grcGXkLdb7VcT8QPYLBa8ouIyEoUQJ2OyeNQ==
