@@ -4,6 +4,7 @@ import { code } from "@/data/code";
 import Image from "next/image";
 
 import GetInTouch from "@/components/GetInTouch";
+import Link from "next/link";
 
 export default function page() {
   return (
@@ -40,32 +41,31 @@ export default function page() {
               </p>
               <div className="mb-2 flex flex-wrap items-center gap-2 text-sm text-gray-400">
                 {item.isOpenSource && item.repo && (
-                  <a
+                  <Link
                     href={item.repo}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-indigo-400"
+                    className="underline text-indigo-400 cursor-pointer"
                   >
                     Repo
-                  </a>
+                  </Link>
                 )}
                 {item.category !== "mobile" && item.demo && (
-                  <a
+                  <Link
                     href={item.demo}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-green-400"
+                    className="underline text-green-400 cursor-pointer"
                   >
                     Demo
-                  </a>
+                  </Link>
                 )}
-                {item.caseStudyUrl && (
-                  <a
-                    href={item.caseStudyUrl}
+                {item.repo && (
+                  <Link
+                    href={item.repo}
+                    target="_blank"
                     className="underline text-blue-400"
                   >
                     Code
-                  </a>
+                  </Link>
                 )}
               </div>
               {item.techStack && item.techStack.length > 0 && (
