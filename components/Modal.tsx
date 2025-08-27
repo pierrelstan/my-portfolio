@@ -7,7 +7,7 @@ export default function Modal({ onClose, children, title }: any) {
   };
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay z-[var(--z-navbar)]">
       {/* Wrap the whole Modal inside the newly created StyledModalWrapper
             and use the ref */}
       <div className="modal-wrapper">

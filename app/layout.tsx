@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stanley Portfolio",
+  title: "Stanley Pierre Louis",
   description: "Showcasing the projects and skills of Stanley",
 };
 
@@ -29,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  text-white mx-auto px-8 md:px-32`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  text-white mx-auto px-8 md:px-32 -z-10`}
       >
-        <Navbar />
-        {children}
+        <div id="__next">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

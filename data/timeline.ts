@@ -1,54 +1,101 @@
+import { code } from "./code";
+
 export const timeline = [
   {
-    id: 'exp-00',
-    position: 'Full Stack Developer / Lead Frontend Developer',
-    company: 'GreenStand',
-    startDate: 'December 2021',
-    endDate: 'Present',
+    id: 'exp-00232323234r43r4r34',
+    position: 'Frontend Developer',
+    subtitle: 'Solpam',
+    company: 'Solpam app',
     type: 'Part-time',
+    isLeadership:true,
     location: 'Remote',
-    description: `
- - Led the front-end development team, contributed to back-end initiatives, and
-optimized application performance. Mentored junior developers while ensuring
-high code quality through rigorous code reviews.`,
-    website: 'https://greenstand.org/'
+    imageUrl: '/solpam.png',
+    leadership:"Contributed to decision-making regarding app features and user experience.",
+    designer : "",
+    developer:`
+   - Transform UI/UX into functional code.
+   - Ensured maintainable, testable code using TypeScript and React Native Testing Library.`,
+    description:"Solpam is a financial app that simplifies the management of rotating savings groups (ROSCAs). It helps users track their contributions, manage payout turns, and stay organized, making collective saving more transparent and accessible.",
+    techStack: ["Expo ReactNative", 'TypeScript', "React-Native testing-library", "Redux-toolkit"],
+    projectOutcome:"Project currently in development (ongoing)"
   },
   {
-    id: 'exp-1',
-    position: 'Content Moderator',
-    company: 'Dev Community',
-    startDate: 'May 2023',
-    endDate: 'June 2024',
+    id: 'exp-0054565464',
+    position: 'Frontend Developer',
+    subtitle: 'TreeTracker wallet app',
+    company: 'TreeTracker wallet app',
     type: 'Part-time',
+    isLeadership:true,
     location: 'Remote',
-    description: `
-    - Moderated user-generated content to maintain community guidelines.
-    - Identified and addressed problematic content to ensure a welcoming and
-respectful community atmosphere.`,
-    website: 'https://dev.to/'
+    imageUrl: '/greenstandLogo.png',
+    leadership:"Contributed to decision-making regarding app features and user experience.",
+    designer : "",
+    developer:"I not only worked on the frontend web and mobile side .I also worked on the NextJS backend",
+    description:"TreeTracker Wallet is a user-friendly web and  mobile app built to simplify token transfers within the TreeTracker ecosystem.",
+    techStack: ['Next.js',"ReactNative", 'Material UI', 'TypeScript', "Cypress", "Jotai", "React Native", "Tailwind CSS", "Git", "GitHub", "NestJS", "WebDriverIO","Docker","PostgreSQL"],
+    projectOutcome:"Project currently in development (ongoing)"
   },
-    {
-    id: 'exp-2',
-    position: 'React Developer',
-    company: 'HaiDevs',
-    startDate: 'March 2023',
-    endDate: 'July 2023',
+   {
+    id: 'exp-3232ewew',
+    subtitle: 'Treetracker Web Map',
+    position: 'Frontend Developer',
+    company: 'Treetracker Web Map',
     type: 'Part-time',
+    isLeadership:false,
     location: 'Remote',
-    description: 'Collaborated closely with the development team at HaiDevs, playing a vital role in developing the Minimum Viable Product (MVP) for web applications.',
-    website: ''
+     imageUrl: '/greenstandLogo.png',
+    designer : "",
+    leadership:"",
+    developer:"I contributed on the frontend side",
+    description: "Treetracker Web Map displays location and details of all trees that have been tracked in Greenstand. Users can filter trees by species, age, and health status. The map is built using React, Mapbox GL JS, and integrates with the TreeTracker API to fetch real-time data.",
+  techStack: ['Next.js', 'Material UI', 'TypeScript', "Git", "GitHub"],
+    projectOutcome:"Project currently in development (ongoing)"
   },
+  {
+    id: 'exp-3232',
+    subtitle: 'Treetracker Query API,This API exposes a RESTful interface to query the treetracker data, capture, planter and organization and others.',
+    position: 'Backend Developer',
+    company: 'Treetracker Query API',
+    type: 'Part-time',
+    isLeadership:false,
+    location: 'Remote',
+     imageUrl: '/greenstandLogo.png',
+    designer : "",
+    leadership:"",
+    developer:"I contributed to the development of the API",
+    description: 'Treetracker Query API,This API exposes a RESTful interface to query the treetracker data, capture, planter and organization and others',
+  techStack: ['TypeScript', "Git", "GitHub", "PostgreSQL"],
+    projectOutcome:"Project currently in development (ongoing)"
+  },
+  //   {
+  //   id: 'exp-2',
+  //   subtitle: 'Haidev, a community app for Haitian developers',
+  //   position: 'React Developer',
+  //   company: 'Haidev, a community app for Haitian developers',
+  //   type: 'Part-time',
+  //   location: 'Remote',
+  //    imageUrl: '/noImage.jpg',
+  //   designer : "",
+  //   leadership:"",
+  //   developer:"I contributed to the development of the front-end",
+  //   description: 'Haidev is a community for developers for Haiti where to share and learn from each other.',
+  // techStack: ['Next.js', 'Chakra UI', 'TypeScript', "Mdx", "Tailwind CSS", "Git", "GitHub", "Vercel"],
+  //   projectOutcome:"On Hold"
+  // },
     {
     id: 'exp-3',
-    position: 'Co-Founder & React/ React Native Developer',
-    company: 'Kay Rapid',
-    startDate: 'March 2018 ',
-    endDate: 'July 2019',
+    subtitle: 'Kay Rapid ',
+    position: '',
+    company: 'Kay Rapid, housing app for Haiti',
     type: '',
+    isLeadership:true,
     location: 'Haiti',
-    description: 'Helped shape the app\'s direction and actively participated in discussions to improve the user experience and prioritize features.',
-    website: 'https://kayrapid.com'
+     imageUrl: '/kayrapid.png',
+     leadership:"Contributed to decision-making regarding app features and user experience.",
+    designer : "I helped on the design side through Figma",
+    developer:"I contributed to the development of the front-end and the UI/UX design and decision making",
+    description: 'Kay Rapid is a housing app for Haiti. This project was my first "serious" React/React Native project. Where we were trying solving real housing problems through technology. Because Haiti has his own stucture to lend or rent apartments, we were trying to create a platform to connect landlords and tenants.',
+    techStack: ["React Native", "Apollo Client", "React Navigation", "GraphQL Yoga", "Node JS", "Express", "Prisma"],
+    projectOutcome:"The project had to stop because of lack of funding."
   },
-  
-
 ];

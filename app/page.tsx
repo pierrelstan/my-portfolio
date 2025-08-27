@@ -1,14 +1,20 @@
 "use client";
-import GetInTouch from "@/components/GetInTouch";
+import Certifications from "@/components/Certifications";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import TimeLine from "@/components/TimeLine";
+// import Skills from "@/components/Skills";
+import Portfolio from "@/components/Portfolio";
 
 export default function IndexPage() {
   return (
     <main className="mx-auto max-w-7xl">
       <Hero />
-      <TimeLine />
-      <GetInTouch />
+      {/* <Skills /> */}
+      <Portfolio />
+      <Certifications />
+      <Contact />
+      <Footer />
     </main>
   );
 }
