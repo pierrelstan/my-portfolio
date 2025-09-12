@@ -8,10 +8,14 @@ import { cn } from "@/utils";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
-  { title: "Bio", url: "bio" },
-  { title: "Portfolio", url: "portfolio" },
-  { title: "Certifications", url: "certifications" },
-  { title: "Contact", url: "contact" },
+  { title: "Bio", url: "#bio" },
+  { title: "Portfolio", url: "#portfolio" },
+  { title: "Certifications", url: "#certifications" },
+  { title: "Contact", url: "#contact" },
+  {
+    title: "Resume",
+    url: "https://docs.google.com/document/d/1hQyMnNEHIoqCaDxGjJtlK8IiBbIQv69hBiCO8nh9oSE/edit?usp=sharing",
+  },
 ];
 
 const Navbar = () => {
@@ -38,14 +42,18 @@ const Navbar = () => {
           {LINKS.map(({ title, url }) => (
             <li key={url}>
               <Link
-                href={`#${url}`}
+                href={url}
                 title={title}
+                target={url.startsWith("https") ? "_blank" : "_self"}
                 aria-label={`Navigate to ${title}`}
                 className={cn(
                   "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
                   pathname.includes(url)
                     ? "text-[var(--color-text-primary)]"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
+                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
+                  url.startsWith("https")
+                    ? "border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
+                    : ""
                 )}
               >
                 {title}
@@ -91,17 +99,19 @@ const Navbar = () => {
             {LINKS.map(({ title, url }) => (
               <li key={url}>
                 <Link
-                  href={`#${url}`}
+                  href={url}
                   title={title}
                   aria-label={`Navigate to ${title}`}
                   onClick={closeMenu}
                   className={cn(
-                    "block text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] py-[var(--space-2)] border-b last:border-b-0",
+                    "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
                     pathname.includes(url)
                       ? "text-[var(--color-text-primary)]"
-                      : "text-[var(--color-text-primary)] hover:text-[var(--color-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
+                    url.startsWith("https")
+                      ? "border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)]"
+                      : ""
                   )}
-                  style={{ borderColor: "var(--navbar-border-light)" }}
                 >
                   {title}
                 </Link>
