@@ -139,7 +139,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="theme-button-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
             >
               {isSubmitting ? "Sending..." : "Send"}
             </button>
