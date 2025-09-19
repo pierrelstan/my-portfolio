@@ -5,12 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/utils";
-import { Menu, X } from "lucide-react";
+import { Home, Menu, X } from "lucide-react";
 
 const LINKS = [
   { title: "Bio", url: "#bio" },
   { title: "Portfolio", url: "#portfolio" },
   { title: "Certifications", url: "#certifications" },
+  { title: "Code", url: "/code" },
   { title: "Contact", url: "#contact" },
   {
     title: "Resume",
@@ -18,12 +19,24 @@ const LINKS = [
   },
 ];
 
-const Navbar = () => {
+const codeList = [
+  {
+    title: "Resume",
+    url: "https://docs.google.com/document/d/1hQyMnNEHIoqCaDxGjJtlK8IiBbIQv69hBiCO8nh9oSE/edit?usp=sharing",
+  },
+];
+
+interface NavbarProps {
+  variant: "code" | "default";
+}
+const Navbar = ({ variant }: NavbarProps) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const links = variant === "code" ? codeList : LINKS;
 
   return (
     <nav
@@ -35,11 +48,11 @@ const Navbar = () => {
           href="/"
           className="font-regular tracking-wide text-balance font-bold text-[var(--color-primary)]"
         >
-          Stanley.
+          {variant === "code" ? <Home /> : "Stanley"}
         </Link>
 
         <ul className="hidden md:flex gap-[var(--space-6)]">
-          {LINKS.map(({ title, url }) => (
+          {links.map(({ title, url }) => (
             <li key={url}>
               <Link
                 href={url}
@@ -52,7 +65,7 @@ const Navbar = () => {
                     ? "text-[var(--color-text-primary)]"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
                   url.startsWith("https")
-                    ? "border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
+                    ? "border-1 border-[var(--color-primary)] px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
                     : ""
                 )}
               >
@@ -96,7 +109,7 @@ const Navbar = () => {
           }}
         >
           <ul className="flex flex-col py-[var(--space-4)] px-[var(--space-8)] space-y-[var(--space-4)]">
-            {LINKS.map(({ title, url }) => (
+            {links.map(({ title, url }) => (
               <li key={url}>
                 <Link
                   href={url}
