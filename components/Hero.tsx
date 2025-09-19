@@ -7,33 +7,22 @@ export default function Hero() {
   return (
     <section className="relative grid justify-center  min-h-[calc(100vh-10rem)] mt-[var(--space-32)] gap-[var(--space-8)] md:grid-cols-[1fr_1fr]">
       <div className="flex justify-center ">
-        <Image
-          src="/profile.png"
-          width={200}
-          height={200}
-          quality={80}
-          sizes="(max-width: 768px) 100vw, 33vw"
-          alt="profile"
-          className="w-[200px] h-[200px] object-cover "
-        />
+        <div className="w-[200px] h-[200px] object-cover bg-[url(/profile.png)] bg-cover bg-center  rounded-full bg-center"></div>
       </div>
       <div className="flex flex-col">
         <h1
           className="font-[var(--font-weight-semibold)] tracking-tight text-balance break-words leading-[1.15] text-[var(--font-size-xl)] md:text-[var(--font-size-5xl)] text-left"
           style={{ color: "var(--color-text-primary)" }}
         >
-          My name is Stanley Pierre Louis
+          Hi, I’m Stanley
         </h1>
 
         <p
           className="text-pretty break-words leading-relaxed text-[var(--font-size-base)] sm:text-[var(--font-size-sm)] text-left mt-[var(--space-4)]"
           style={{ color: "var(--color-text-secondary)" }}
         >
-          I’m a Software Developer specializing in frontend (React, React
-          Native, TypeScript) with 3+ years of experience in web and mobile
-          development. Certified in Frontend and Full Stack Development, I
-          currently lead frontend development at Greenstand, where I build
-          scalable, user-centric applications.
+          I build scalable web & mobile apps with React, Next.js, and React
+          Native.
         </p>
 
         <div className="flex gap-[var(--space-4)] mt-[var(--space-8)] text-[var(--color-text-primary)]">
