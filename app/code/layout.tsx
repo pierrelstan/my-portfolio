@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/Navbar/Navbar";
+//@ts-ignore
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Stanley Pierre Louis",
+  description: "Showcasing the projects and skills of Stanley",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div>
+      <Navbar variant="code" />
+      {children}
+    </div>
+  );
+}
