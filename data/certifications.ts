@@ -3,7 +3,7 @@ export const certifications = [
       id: 'cert-00',
       name:"FreeCodeCamp",
       title:"Front-End Development",
-      website: 'https://www.freecodecamp3.org/certification/pierrelstan/front-end-development-libraries',
+      website: 'https://www.freecodecamp.org/certification/pierrelstan/front-end-development-libraries',
       pdf:"",
       imageUrl: [
         {
