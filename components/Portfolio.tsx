@@ -41,7 +41,7 @@ export default function PortFolio() {
       <div className="p-20">
         <div className="mt-[var(--space-4)] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[var(--space-10)]">
           {timeline.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="list-none">
               <div
                 onClick={(e) => {
                   e.preventDefault();
@@ -70,7 +70,7 @@ export default function PortFolio() {
                     alt="Background"
                     width={100}
                     height={100}
-                    className="object-cover"
+                    className="object-cover rounded-full"
                     priority
                   />
                   <div className="absolute inset-0 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-0">
