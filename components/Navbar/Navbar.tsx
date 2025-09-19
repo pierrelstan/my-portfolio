@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,29 +19,75 @@ const LINKS = [
   },
 ];
 
-const codeList = [
-  {
-    title: "Resume",
-    url: "https://docs.google.com/document/d/1hQyMnNEHIoqCaDxGjJtlK8IiBbIQv69hBiCO8nh9oSE/edit?usp=sharing",
-  },
-];
-
 interface NavbarProps {
   variant: "code" | "default";
 }
+
+interface NavLinkProps {
+  title: string;
+  url: string;
+  isHash: boolean;
+  active: boolean;
+  onClick: () => void;
+}
+
+const NavLink = ({ title, url, isHash, active, onClick }: NavLinkProps) => (
+  <li>
+    <Link
+      href={url}
+      title={title}
+      target={url.startsWith("https") ? "_blank" : "_self"}
+      rel={url.startsWith("https") ? "noopener noreferrer" : undefined}
+      aria-label={`Navigate to ${title}`}
+      onClick={onClick}
+      className={cn(
+        "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
+        active
+          ? "text-[var(--color-primary)]"
+          : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
+        url.startsWith("https")
+          ? "border border-[var(--color-primary)] px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
+          : ""
+      )}
+    >
+      {title}
+    </Link>
+  </li>
+);
+
 const Navbar = ({ variant }: NavbarProps) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState<string>(""); 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setCurrentHash(window.location.hash || "");
+    const updateHash = () => setCurrentHash(window.location.hash || "");
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const links = variant === "code" ? codeList : LINKS;
+  const links =
+    variant === "code"
+      ? [LINKS.find((link) => link.title === "Resume")!]
+      : LINKS;
+
+  const getActiveState = (url: string) => {
+    const isExternal = url.startsWith("http");
+    const isHash = url.startsWith("#");
+    if (isExternal) return false;
+    if (isHash) return currentHash === url;
+    return pathname === url || pathname.startsWith(url);
+  };
 
   return (
     <nav
-      className="sticky top-0 h-[var(--navbar-height)] bg-[#18181b] md:bg-transparent backdrop-blur-sm border-b transition-all duration-300 ease-in-out z-[var(--z-sticky)]"
-      style={{ borderColor: "var(--navbar-border)" }}
+      className={cn(
+        "sticky top-0 h-[var(--navbar-height)] bg-[#18181b] md:bg-transparent backdrop-blur-sm border-b transition-all duration-300 ease-in-out z-[var(--z-sticky)] border-[var(--navbar-border)]"
+      )}
     >
       <div className="flex relative p-[var(--space-8)] h-[var(--navbar-height)] max-w-7xl items-center justify-between">
         <Link
@@ -52,27 +98,22 @@ const Navbar = ({ variant }: NavbarProps) => {
         </Link>
 
         <ul className="hidden md:flex gap-[var(--space-6)]">
-          {links.map(({ title, url }) => (
-            <li key={url}>
-              <Link
-                href={url}
+          {links.map(({ title, url }) => {
+            const isHash = url.startsWith("#");
+            const active = getActiveState(url);
+            return (
+              <NavLink
+                key={url}
                 title={title}
-                target={url.startsWith("https") ? "_blank" : "_self"}
-                aria-label={`Navigate to ${title}`}
-                className={cn(
-                  "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
-                  pathname.includes(url)
-                    ? "text-[var(--color-text-primary)]"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
-                  url.startsWith("https")
-                    ? "border-1 border-[var(--color-primary)] px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
-                    : ""
-                )}
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
+                url={url}
+                isHash={isHash}
+                active={active}
+                onClick={() => {
+                  if (isHash) setCurrentHash(url);
+                }}
+              />
+            );
+          })}
         </ul>
 
         <button
@@ -92,6 +133,7 @@ const Navbar = ({ variant }: NavbarProps) => {
               : "var(--color-primary)")
           }
           aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -107,29 +149,27 @@ const Navbar = ({ variant }: NavbarProps) => {
             backgroundColor: "#18181b",
             borderColor: "var(--navbar-border)",
           }}
+          role="menu"
+          aria-hidden={!isMenuOpen}
         >
           <ul className="flex flex-col py-[var(--space-4)] px-[var(--space-8)] space-y-[var(--space-4)]">
-            {links.map(({ title, url }) => (
-              <li key={url}>
-                <Link
-                  href={url}
+            {links.map(({ title, url }) => {
+              const isHash = url.startsWith("#");
+              const active = getActiveState(url);
+              return (
+                <NavLink
+                  key={url}
                   title={title}
-                  aria-label={`Navigate to ${title}`}
-                  onClick={closeMenu}
-                  className={cn(
-                    "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
-                    pathname.includes(url)
-                      ? "text-[var(--color-text-primary)]"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
-                    url.startsWith("https")
-                      ? "border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)]"
-                      : ""
-                  )}
-                >
-                  {title}
-                </Link>
-              </li>
-            ))}
+                  url={url}
+                  isHash={isHash}
+                  active={active}
+                  onClick={() => {
+                    if (isHash) setCurrentHash(url);
+                    closeMenu();
+                  }}
+                />
+              );
+            })}
           </ul>
         </div>
       </div>
