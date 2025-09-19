@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="relative grid justify-center  min-h-[calc(100vh-10rem)] mt-[var(--space-32)] gap-[var(--space-8)] md:grid-cols-[1fr_1fr]">
+    <section className="relative grid justify-center items-center min-h-[calc(100vh-10rem)]  gap-[var(--space-8)] md:grid-cols-[1fr_1fr]">
       <div className="flex justify-center ">
         <div className="w-[200px] h-[200px] object-cover bg-[url(/profile.png)] bg-cover bg-center  rounded-full bg-center"></div>
       </div>
