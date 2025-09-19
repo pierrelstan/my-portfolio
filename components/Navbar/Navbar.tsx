@@ -11,7 +11,7 @@ const LINKS = [
   { title: "Bio", url: "#bio" },
   { title: "Portfolio", url: "#portfolio" },
   { title: "Certifications", url: "#certifications" },
-  { title: "Code", url: "/code" },
+  // { title: "Code", url: "/code" },
   { title: "Contact", url: "#contact" },
   {
     title: "Resume",
