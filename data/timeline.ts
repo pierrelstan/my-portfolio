@@ -86,7 +86,7 @@ export const timeline = [
     id: 'exp-3',
     subtitle: 'Kay Rapid ',
     position: '',
-    company: 'Kay Rapid, housing app for Haiti',
+    company: 'Kay Rapid',
     type: '',
     isLeadership:true,
     location: 'Haiti',
