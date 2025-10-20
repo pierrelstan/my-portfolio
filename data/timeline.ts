@@ -100,7 +100,7 @@ export const timeline = [
     type: '',
     isLeadership:true,
     location: 'Haiti',
-    projectImage:"/kayrapidLogoProject.png",
+    projectImage:'/kayrapidLogoProject.png',
      logo: '/kayrapid.png',
      leadership:"Contributed to decision-making regarding app features and user experience.",
     designer : "",

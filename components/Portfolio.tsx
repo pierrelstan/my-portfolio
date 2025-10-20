@@ -154,7 +154,7 @@ export default function Portfolio() {
                   </div>
                 ) : (
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/${item.logo}`}
+                    src={item.logo}
                     alt={`${item.company} logo`}
                     width={100}
                     height={100}
@@ -234,7 +234,7 @@ export default function Portfolio() {
             <div className="flex-1 overflow-y-auto pt-6 space-y-6 text-[var(--color-text-primary)] leading-relaxed whitespace-pre-line">
               <div className="flex justify-center items-center mb-[90px] mt-[90px]">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/${selectedItem.projectImage}`}
+                  src={selectedItem.projectImage}
                   alt={`${selectedItem.company} logo`}
                   width={800}
                   height={800}

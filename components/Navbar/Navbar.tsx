@@ -49,12 +49,12 @@ const NavLink = ({ title, url, isHash, active, onClick }: NavLinkProps) => (
       aria-label={`Navigate to ${title}`}
       onClick={onClick}
       className={cn(
-        "text-[var(--font-size-base)] font-regular tracking-wide transition-[var(--transition-base)] font-bold",
+        "text-(--font-size-base) font-regular tracking-wide transition-(--transition-base) font-bold",
         active
-          ? "text-[var(--color-primary)]"
-          : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]",
+          ? "text-(--color-primary)"
+          : "text-(--color-text-secondary) hover:text-(--color-primary)",
         url.startsWith("https")
-          ? "border border-[var(--color-primary)] px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
+          ? "border border-(--color-primary) px-(--space-4) py-(--space-2) rounded text-(--color-primary) hover:bg-(--color-primary) hover:text-(--color-background)"
           : ""
       )}
     >
@@ -91,18 +91,18 @@ const Navbar = ({ variant }: NavbarProps) => {
   return (
     <nav
       className={cn(
-        "sticky top-0 h-[var(--navbar-height)] transition-all duration-300 ease-in-out z-[var(--z-sticky)] border-[var(--navbar-border)]"
+        "sticky top-0 h-(--navbar-height) transition-all duration-300 ease-in-out z-(--z-sticky) border-(--navbar-border)"
       )}
     >
-      <div className="flex  h-[var(--navbar-height)] max-w-7xl items-center justify-between bg-transparent backdrop-blur-2xl">
+      <div className="flex  h-(--navbar-height) max-w-7xl items-center justify-between bg-transparent backdrop-blur-2xl">
         <Link
           href="/"
-          className="font-regular tracking-wide text-balance font-bold text-[var(--color-primary)]"
+          className="font-regular tracking-wide text-balance font-bold text-(--color-primary)"
         >
           {variant === "code" ? <Home /> : "Stanley"}
         </Link>
 
-        <ul className="hidden md:flex gap-[var(--space-6)]">
+        <ul className="hidden md:flex gap-(--space-6)">
           {links.filter(Boolean).map(({ title, url }) => {
             const isHash = url.startsWith("#");
             const active = getActiveState(url);
@@ -123,7 +123,7 @@ const Navbar = ({ variant }: NavbarProps) => {
 
         <button
           onClick={toggleMenu}
-          className="md:hidden transition-[var(--transition-base)] p-[var(--space-2)]"
+          className="md:hidden transition-(--transition-base) p-(--space-2)"
           style={{
             color: isMenuOpen
               ? "var(--color-text-primary)"
@@ -145,16 +145,16 @@ const Navbar = ({ variant }: NavbarProps) => {
 
         <div
           className={cn(
-            "absolute top-[var(--navbar-height)] left-0 right-0 md:hidden transition-all duration-300 ease-in-out border-b border-[var(--navbar-border)] z-[var(--z-sticky)]",
+            "absolute top-(--navbar-height) left-0 right-0 md:hidden transition-all duration-300 ease-in-out border-b border-(--navbar-border) z-(--z-sticky)",
             " ",
             isMenuOpen
-              ? "opacity-100 translate-y-0 visible bg-background"
+              ? "opacity-100 translate-y-0 visible bg-background  py-10"
               : "opacity-0 -translate-y-4 invisible"
           )}
           role="menu"
           aria-hidden={!isMenuOpen}
         >
-          <ul className="flex flex-col  space-y-[var(--space-4)] ">
+          <ul className="flex flex-col  space-y-(--space-4) ">
             {links.filter(Boolean).map(({ title, url }) => {
               const isHash = url.startsWith("#");
               const active = getActiveState(url);

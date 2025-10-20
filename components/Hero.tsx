@@ -71,7 +71,11 @@ export default function Hero() {
       className="relative grid justify-center items-center min-h-[calc(100vh-10rem)] gap-[var(--space-8)] md:grid-cols-[1fr_1fr]"
     >
       <div className="flex justify-center">
-        <div
+        <Image
+          src="/profile.png"
+          alt="Profile"
+          width={200}
+          height={200}
           className="hero-image w-[200px] h-[200px] object-cover bg-[url(/profile.png)] bg-cover bg-center rounded-full"
           aria-hidden="true"
         />

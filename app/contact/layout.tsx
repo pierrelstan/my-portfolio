@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <Navbar variant="code" />
+      <Navbar variant="default" />
       {children}
     </div>
   );
