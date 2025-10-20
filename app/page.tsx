@@ -1,4 +1,5 @@
 "use client";
+import About from "@/components/About";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -12,9 +13,9 @@ export default function IndexPage() {
     <main className="mx-auto max-w-7xl">
       <Navbar variant="default" />
       <Hero />
+      {/* <About /> */}
       <Portfolio />
-      <Certifications />
-      <Contact />
+      {/* <Certifications /> */}
       <Footer />
     </main>
   );

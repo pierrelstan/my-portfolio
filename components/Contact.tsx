@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "./Footer";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,20 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // trigger CSS stagger animations after mount
+    const timeout = setTimeout(() => {
+      const root = containerRef.current;
+      if (!root) return;
+      // add animate to all stagger parents inside this component
+      root.classList.add("animate");
+      const nodes = root.querySelectorAll<HTMLElement>(".stagger-parent");
+      nodes.forEach((n) => n.classList.add("animate"));
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -54,98 +69,100 @@ export default function Contact() {
   };
 
   return (
-    <section className="mt-[var(--space-16)]  min-h-[calc(100vh-10rem)]">
-      <Toaster position="top-right" reverseOrder={false} />
+    <>
+      <section
+        className="min-h-[calc(100vh-10rem)] mb-20 flex flex-col justify-center items-center mt-[100px]"
+        id="contact"
+      >
+        <Toaster position="top-right" reverseOrder={false} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-8)] lg:gap-[var(--space-12)]">
-        <div className="flex justify-center items-center">
-          {/* <Image
-            width={800}
-            height={800}
-            src="/form.png"
-            alt="form"
-            className="w-auto"
-            style={{ zIndex: "var(--z-background)" }}
-          /> */}
-          <div className="text-[var(--color-text-primary)] font-[var(--font-weight-extrabold)] tracking-tight text-balance break-words leading-[1.5] text-3xl md:text-6xl  relative">
-            Let's build something AWESOME!
+        <div
+          ref={containerRef}
+          className="flex flex-col lg:flex-row justify-center items-center gap-10"
+        >
+          <div className="heading text-[var(--color-text-primary)] text-center font-extrabold text-3xl md:text-7xl">
+            <span className="animate-fade-up">
+              Let's build something AWESOME!
+            </span>
+          </div>
+
+          <div className="mt-8 max-w-md">
+            <p className="text-[var(--color-text-secondary)] mb-8 leading-relaxed text-center animate-fade-up">
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you. Send me a message and I'll get back to you as soon as
+              possible.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block mb-2 font-medium text-black"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-background border border-[var(--card-border)] rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] text-[var(--color-primary)] placeholder-[var(--color-text-muted)]"
+                  placeholder="Looking for a React developer"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block mb-2 font-medium text-black"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-background border border-[var(--card-border)] rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] text-[var(--color-primary)] placeholder-[var(--color-text-muted)]"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block mb-2 font-medium text-black"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 bg-background border border-[var(--card-border)] rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] text-[var(--color-primary)] placeholder-[var(--color-text-muted)] resize-vertical"
+                  placeholder="Hi Stanley, let's work together!"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="border border-[var(--color-primary)] px-4 py-2 rounded text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--color-primary)] hover:text-white text-center"
+              >
+                {isSubmitting ? "Sending..." : "Send"}
+              </button>
+            </form>
           </div>
         </div>
-
-        <div className="mt-[var(--space-8)] max-w-2xl" id="contact">
-          <p className="text-[var(--color-text-secondary)] mb-[var(--space-8)] leading-[var(--line-height-relaxed)]">
-            Have a project in mind or want to collaborate? I'd love to hear from
-            you. Send me a message and I'll get back to you as soon as possible.
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-[var(--space-6)]">
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-[var(--font-size-sm)] font-[var(--font-weight-medium)] mb-[var(--space-2)]"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full px-[var(--space-4)] py-[var(--space-3)] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-[var(--radius-lg)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-[var(--transition-base)]"
-                placeholder="Looking for a React developer"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-[var(--font-size-sm)] font-[var(--font-weight-medium)] mb-[var(--space-2)]"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-[var(--space-4)] py-[var(--space-3)] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-[var(--radius-lg)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-[var(--transition-base)]"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-[var(--font-size-sm)] font-[var(--font-weight-medium)] mb-[var(--space-2)]"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="w-full px-[var(--space-4)] py-[var(--space-3)] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-[var(--radius-lg)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-[var(--transition-base)] resize-vertical"
-                placeholder="Hi Stanley, let's work together!"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="border-1 var(--color-primary) px-[var(--space-4)] py-[var(--space-2)] rounded text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--color-primary)] hover:text-[var(--color-background)]"
-            >
-              {isSubmitting ? "Sending..." : "Send"}
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </>
   );
 }

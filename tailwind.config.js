@@ -4,6 +4,10 @@ module.exports = {
 
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['var(--font-poppins)', 'sans-serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
+      },
       colors: {
         // Core Colors
         background: "var(--background)",
